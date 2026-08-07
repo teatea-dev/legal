@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ | TeaTea</title>
+<style>
+  body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; font-size: 16px; color: #333; }
+  h1 { font-size: 24px; margin-bottom: 20px; }
+  
+  /* お知らせ記事（カード風枠線・区切り） */
+  .news-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* 日付とバッジ */
+  .news-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: bold;
+  }
+  .badge.update { background-color: #e3f2fd; color: #0d47a1; } /* アプデ（青） */
+  .badge.important { background-color: #ffebee; color: #c62828; } /* 重要（赤） */
+  
+  /* タイトルと本文 */
+  .news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+  .news-content {
+    margin: 0;
+    color: #444;
+  }
+</style>
+</head>
+<body>
 
+<h1>TeaTea からのお知らせ</h1>
+
+<!-- お知らせ 1件目 -->
+<div class="news-item">
+  <div class="news-meta">
+    <span>2026年8月1日</span>
+    <span class="badge update">アップデート</span>
+  </div>
+  <h2 class="news-title">バージョン 1.1.0 をリリースしました</h2>
+  <div class="news-content">
+    <p>いつも TeaTea をご利用いただきありがとうございます。</p>
+    <ul>
+      <li>設定画面にお知らせ機能を追加しました。</li>
+      <li>AIメッセージ生成の応答速度と安定性を向上させました。</li>
+    </ul>
+  </div>
+</div>
+
+<!-- お知らせ 2件目 -->
+<div class="news-item">
+  <div class="news-meta">
+    <span>2026年7月29日</span>
+    <span class="badge">お知らせ</span>
+  </div>
+  <h2 class="news-title">アプリ配信開始のお知らせ</h2>
+  <div class="news-content">
+    <p>
+      日常に寄り添うAIメッセージアプリ「TeaTea」の配信を開始いたしました。<br>
+      朝・昼・夜のタイミングで、日々の活力となるメッセージをお届けします。
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
