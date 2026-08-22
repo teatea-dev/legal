@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お知らせ | TeaTea</title>
+
+<!-- Google Translate 既定スタイル調整 -->
 <style>
-  body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; font-size: 16px; color: #333; }
-  h1 { font-size: 24px; margin-bottom: 20px; }
+  body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; font-size: 16px; color: #333; top: 0 !important; }
+  .goog-te-banner-frame { display: none !important; }
+  #google_translate_element { display: none; }
   
   /* お知らせ記事（カード風枠線・区切り） */
   .news-item {
@@ -50,8 +53,36 @@
     color: #444;
   }
 </style>
+
+<!-- 自動言語切り替えスクリプト -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ja',
+      autoDisplay: false
+    }, 'google_translate_element');
+
+    // URLの ?lang=パラメータを取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetLang = urlParams.get('lang');
+
+    // ja 以外、かつ指定がある場合に自動切り替え
+    if (targetLang && targetLang !== 'ja') {
+      setTimeout(function() {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = targetLang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }, 500);
+    }
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
+
+<div id="google_translate_element"></div>
 
 <h1>TeaTea からのお知らせ</h1>
 
