@@ -5,9 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お知らせ | TeaTea</title>
 
-<!-- Google Translate 既定スタイル調整 -->
+<!-- Google Translate 既定スタイル調整 & ダークモード対応 -->
 <style>
-  body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; font-size: 16px; color: #333; top: 0 !important; }
+  /* -----------------------------------------------------------------
+   * 1. 共通・ライトモード用スタイル
+   * ----------------------------------------------------------------- */
+  body { 
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: auto; 
+    font-size: 16px; 
+    color: #333; 
+    background-color: #ffffff;
+    top: 0 !important; 
+  }
   .goog-te-banner-frame { display: none !important; }
   #google_translate_element { display: none; }
   
@@ -51,6 +64,50 @@
   .news-content {
     margin: 0;
     color: #444;
+  }
+  .news-content ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  .news-content li {
+    margin-bottom: 6px;
+  }
+
+  /* -----------------------------------------------------------------
+   * 2. ダークモード用スタイル（アプリの背景色 #121212 と統一）
+   * ----------------------------------------------------------------- */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    .news-item {
+      border-bottom-color: #2a2a2a;
+    }
+    .news-meta {
+      color: #a0a0a0;
+    }
+    .news-title {
+      color: #ffffff;
+    }
+    .news-content {
+      color: #cccccc;
+    }
+    a {
+      color: #8ab4f8; /* リンクが見やすい明るい青に変化 */
+    }
+    .badge {
+      background-color: #333333;
+      color: #e0e0e0;
+    }
+    .badge.update {
+      background-color: #1e3a8a;
+      color: #93c5fd;
+    }
+    .badge.important {
+      background-color: #7f1d1d;
+      color: #fca5a5;
+    }
   }
 </style>
 
